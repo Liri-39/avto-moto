@@ -1,0 +1,33 @@
+.logo {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  align-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.logo img {
+  height: 100%;
+}
+
+.logo__text {
+  display: flex;
+  flex-direction: column;
+}
+
+.logo__text span {
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 25px;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.logo__text span:nth-child(2) {
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 19px;
+  letter-spacing: 0.13em;
+}
