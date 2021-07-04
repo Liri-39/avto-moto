@@ -1,0 +1,80 @@
+.slider {
+  width: 100%;
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: stretch;
+  padding-right: 13px;
+}
+
+.slider__tag {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 122px;
+  height: 30px;
+  background-color: $red;
+  z-index: 1;
+}
+
+.slider__tag span {
+  font-weight: 600;
+  font-size: 10px;
+  line-height: 14px;
+  text-align: center;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: $white;
+}
+
+.slider__photo {
+  display: block;
+  margin-bottom: 39px;
+}
+
+.slider__preview-block {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.slider__button {
+  display: flex;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  border: 1px solid $grey1;
+  background-color: transparent;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+
+  &--left {
+    margin-right: 4px;
+  }
+
+  &--right {
+    margin-left: 4px;
+  }
+}
+
+.slider__button svg path{
+  stroke: $grey1;
+}
+
+.slider__button--active svg path{
+  stroke: $graphite;
+}
+
+.slider__button--active:hover {
+  box-shadow: 0 0 3px 0 $graphite;
+}
+
+.slider__preview-item {
+  width: 30%;
+  max-width: 128px;
+  max-height: 80px;
+}

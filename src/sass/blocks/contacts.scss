@@ -1,0 +1,38 @@
+.contacts {
+  display: flex;
+  flex-direction: row;
+  align-content: flex-start;
+  padding: 0;
+  margin: 25px 0 0 0;
+}
+
+.contacts__list {
+  width: 30%;
+  margin: 0;
+  padding: 0 0 0 4px;
+}
+
+.contacts__item-title {
+  padding: 0;
+  margin: 0 0 5px 0;
+  font-weight: bold;
+  line-height: 22px;
+  color: $grey2;
+}
+
+.contacts__item-content {
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 19px;
+  color: $black;
+  padding: 0;
+  margin: 0 0 28px 0;
+
+  & span {
+    display: block;
+  }
+
+  & span:nth-child(1) {
+    padding-top: 5px;
+  }
+}

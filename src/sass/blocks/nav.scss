@@ -1,5 +1,5 @@
 .nav {
-
+  margin-right: 5px;
 }
 
 .nav__list {
@@ -17,4 +17,12 @@
   font-size: 16px;
   line-height: 22px;
   margin-left: 68px;
+
+  &:hover span{
+    color: $black;
+  }
+
+  &:focus span{
+    color: $black;
+  }
 }

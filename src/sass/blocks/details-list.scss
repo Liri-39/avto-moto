@@ -1,0 +1,26 @@
+.details-list {
+  width: 585px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: space-between;
+  margin: 0 0 0 5px;
+  padding: 0 20px 0 0;
+}
+
+.details-list dt, .details-list dd {
+  display: flex;
+  width: 50%;
+  padding: 0;
+  margin: 0;
+  height: 50px;
+  align-items: flex-end;
+  border-bottom: 1px solid $grey1;
+  padding-bottom: 8px;
+}
+
+.details-list dd {
+  justify-content: flex-end;
+  line-height: 22px;
+  color: $black;
+}
