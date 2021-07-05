@@ -1,11 +1,16 @@
 import "normalize.css";
 import React from 'react';
 import ReactDOM from 'react-dom';
+import {configureStore} from '@reduxjs/toolkit';
+import {Provider} from 'react-redux';
 import App from "./components/app/app";
+import {reducer} from './store/reducer';
+
+const store = configureStore({reducer});
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+    <Provider store={store}>
+        <App/>
+    </Provider>,
+    document.querySelector(`#root`)
 );

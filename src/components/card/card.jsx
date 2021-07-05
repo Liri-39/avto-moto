@@ -3,7 +3,7 @@ import CardImg from "../card-img/card-img";
 import CardInfo from "../card-info/card-info";
 import CardOrderBlock from "../card-order-block/card_order_block";
 
-const Card = () => {
+const Card = (offer) => {
     return <main className="card">
         <div className="card__img">
             {<CardImg/>}

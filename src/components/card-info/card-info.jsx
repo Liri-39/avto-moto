@@ -11,7 +11,7 @@ const CardInfo = () => {
             <span className="tab__item">Контакты</span>
         </div>
         <div className="tab__content">
-            {<Reviews/>}
+            {<Contacts/>}
         </div>
     </>
 };

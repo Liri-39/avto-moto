@@ -61,16 +61,20 @@
   }
 }
 
-.slider__button svg path{
+.slider__button:disabled svg path{
   stroke: $grey1;
 }
 
-.slider__button--active svg path{
+.slider__button svg path{
   stroke: $graphite;
 }
 
-.slider__button--active:hover {
+.slider__button:hover {
   box-shadow: 0 0 3px 0 $graphite;
+}
+
+.slider__button:disabled:hover {
+  box-shadow: none;
 }
 
 .slider__preview-item {

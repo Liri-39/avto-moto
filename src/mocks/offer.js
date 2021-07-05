@@ -1,11 +1,11 @@
 export const offer = {
     title: `Марпех 11`,
-    price: `2300000`,
-    oldPrice: `2400000`,
+    price: 2300000,
+    oldPrice: 2400000,
     images: [
-        `desktop_slide_1.png`,
-        `desktop_slide_2.png`,
-        `desktop_slide_3.png`
+        `./img/desktop_slide_1.png`,
+        `./img/desktop_slide_2.png`,
+        `./img/desktop_slide_3.png`
         ],
     features: [
         {
