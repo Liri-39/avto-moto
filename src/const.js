@@ -1,7 +1,16 @@
 export const TabType = {
-    DETAILS: `Характеристики`,
-    CONTACTS: `Контакты`,
-    REVIEWS: `Отзывы`
+    DETAILS: {
+        id: 1,
+        name: `Характеристики`
+    },
+    CONTACTS:  {
+        id: 2,
+        name: `Отзывы`
+    },
+    REVIEWS:  {
+        id: 3,
+        name: `Контакты`
+    },
 };
 
 export const ratings = [

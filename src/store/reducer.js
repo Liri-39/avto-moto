@@ -1,24 +1,13 @@
-import {ActionType} from './action';
-import {offer} from "../mocks/offer";
-import {reviews} from "../mocks/reviews";
-import {TabType} from "../const";
+import {combineReducers} from '@reduxjs/toolkit';
+import main from './data/main';
+import reviewsData from "./data/reviews";
 
-const initialState = {
-    offer,
-    reviews,
-    activeTab: TabType.DETAILS,
+export const NameSpace = {
+    MAIN: `MAIN`,
+    REVIEWS: `REVIEWS`,
 };
 
-const reducer = (state = initialState, action) => {
-    switch (action.type) {
-        case ActionType.ADD_REVIEW:
-            return {
-                ...state,
-                review: action.payload
-            };
-    }
-
-    return state;
-};
-
-export {reducer};
+export default combineReducers({
+    [NameSpace.MAIN]: main,
+    [NameSpace.REVIEWS]: reviewsData
+});

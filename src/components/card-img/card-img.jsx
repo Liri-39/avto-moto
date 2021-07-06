@@ -1,12 +1,12 @@
 import React, {useState} from 'react';
+import {useSelector} from "react-redux";
+import {getOffer} from '../../store/selectors';
 import {MAX_IMG_COUNT} from "../../const";
-import {connect} from 'react-redux';
-import {offerPropTypes} from '../../prop-types/offer-prop-types';
 
-const CardImg = ({offer}) => {
+const CardImg = () => {
 
     const [imageIndex, setImageIndex] = useState(0);
-
+    const offer =  useSelector(getOffer);
     const count = offer.images.length < MAX_IMG_COUNT ? offer.images.length : MAX_IMG_COUNT ;
 
     const onLeftButtonClick = (evt) => {
@@ -56,13 +56,4 @@ const CardImg = ({offer}) => {
     </div>
 };
 
-
-CardImg.propTypes = {
-    offer: offerPropTypes
-};
-
-const mapStateToProps = ({offer}) => ({
-    offer
-});
-
-export default connect(mapStateToProps)(CardImg);
+export default CardImg;
