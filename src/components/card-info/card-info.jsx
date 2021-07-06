@@ -10,7 +10,6 @@ import {changeActiveTab} from "../../store/action";
 const CardInfo = () => {
     const dispatch = useDispatch();
     const tab =  useSelector(getActiveTab);
-    console.log (tab);
 
     let content;
     switch (tab) {
@@ -35,7 +34,7 @@ const CardInfo = () => {
     return <div className="tabs">
         <ul className="tabs__list">
             {Object.values(TabType).map((item) =>
-            <li className="tabs__item-container">
+            <li className="tabs__item-container" key={`tab-${item.id}`}>
                 <a href="#"
                    id={item.id}
                    className={`tabs__item  ${item.id === tab ? `tabs__item--active` : ``}`}

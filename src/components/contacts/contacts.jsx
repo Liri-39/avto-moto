@@ -1,5 +1,5 @@
 import React from 'react';
-import Map from "../map/map";
+import MapY from "../map/map";
 
 const Contacts = () => {
     return <div className="contacts">
@@ -16,7 +16,7 @@ const Contacts = () => {
             <dt className="contacts__item-title">E-mail</dt>
             <dd className="contacts__item-content">info@avto-moto.ru</dd>
         </dl>
-        {<Map/>}
+        {<MapY/>}
     </div>
 };
 

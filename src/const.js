@@ -3,11 +3,11 @@ export const TabType = {
         id: 1,
         name: `Характеристики`
     },
-    CONTACTS:  {
+    REVIEWS:  {
         id: 2,
         name: `Отзывы`
     },
-    REVIEWS:  {
+    CONTACTS:  {
         id: 3,
         name: `Контакты`
     },
@@ -23,3 +23,8 @@ export const ratings = [
 
 export const MAX_IMG_COUNT = 3;
 
+export const centerMap = {
+    center: [59.968137, 30.316272],
+    zoom: 15,
+    controls: []
+};

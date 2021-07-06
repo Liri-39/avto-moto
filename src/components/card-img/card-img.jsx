@@ -30,7 +30,6 @@ const CardImg = () => {
         <img className="slider__photo" src={offer.images[imageIndex]} width="600" height="375" alt={`Изображение ${imageIndex}`} />
         <div className="slider__preview-block">
             <button className="slider__button slider__button--left"
-                    name="left"
                     type="button"
                     onClick={onLeftButtonClick}
                     disabled ={imageIndex === 0}
@@ -43,7 +42,6 @@ const CardImg = () => {
                 <img className="slider__preview-item" src={image} key={`${i}-photo`} width="128" height="80" alt={`Изображение ${i}`} />
             ))}
             <button className="slider__button slider__button--right"
-                    name="right"
                     type="button"
                     onClick={onRightButtonClick}
                     disabled ={imageIndex === (count-1)}
