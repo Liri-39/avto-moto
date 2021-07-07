@@ -3,7 +3,7 @@ import {centerMap} from '../../const'
 import {YMaps, Map, Placemark} from 'react-yandex-maps';
 
 const MapY = () => {
-    return <div id="map" className="map">
+    return <div id="map" className="map" aria-label="Карта">
         <YMaps>
             <Map
                 state={centerMap}

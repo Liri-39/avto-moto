@@ -3,8 +3,8 @@ import CardImg from "../card-img/card-img";
 import CardInfo from "../card-info/card-info";
 import CardOrderBlock from "../card-order-block/card_order_block";
 
-const Card = (offer) => {
-    return <main className="card">
+const Card = () => {
+    return <main className="card" aria-label="Карточка товара">
         <div className="card__img">
             {<CardImg/>}
         </div>

@@ -27,7 +27,7 @@ const ReviewsItem = ({review}) => {
             <time className="reviews__time" dateTime={review.date}>
                 {getDateDiff(review.date)}
             </time>
-            <a href="#">Ответить</a>
+            <a href="#" className="reviews__footer-link">Ответить</a>
         </div>
     </li>
 };

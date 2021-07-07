@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Footer = () => {
-    return <footer className="footer">
+    return <footer className="footer" aria-label="Подвал сайта">
         <div className="footer__wrapper">
             <ul className="footer__menu">
                 <li className="footer__menu-item">

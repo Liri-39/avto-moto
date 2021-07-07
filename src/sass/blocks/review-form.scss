@@ -87,6 +87,7 @@
 
 .form__input {
   width: 300px;
+  height: 50px;
   padding: 15px 25px;
   margin: 6px 0 9px;
   border: 1px solid $graphite20;
@@ -120,9 +121,12 @@
 
 .review-form__textarea {
   width: 300px;
+  height: 118px;
   padding: 15px 25px 11px;
   margin-top: 14px;
   background-color: $white;
+  border: 1px solid $graphite20;
+  resize: none;
 
   &::placeholder {
     font-size: 14px;

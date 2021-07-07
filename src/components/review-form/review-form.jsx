@@ -19,7 +19,7 @@ const ReviewForm = () => {
 
     const sendForm = (evt) => {
         evt.preventDefault();
-        const date = Date.now();
+        const date = new Date();
         dispatch(addReview({user, plus, minus, comment, rating, date}));
         dispatch(setIsFormOpen(false));
     };
@@ -58,8 +58,8 @@ const ReviewForm = () => {
                 <label className="form__input-name" htmlFor="name">Пожалуйста, заполните поле</label>
                 <input className="form__input form__input--text"
                        type="text"
-                       name="name"
-                       id="name"
+                       name="user"
+                       id="user"
                        placeholder="Имя"
                        value={review.user}
                        autoFocus
@@ -76,8 +76,8 @@ const ReviewForm = () => {
                 />
                 <input className="form__input form__input--text"
                        type="text"
-                       name="name3"
-                       id="name3"
+                       name="minus"
+                       id="minus"
                        placeholder="Недостатки"
                        value={review.minus}
                        onChange={handleFormInputChange}

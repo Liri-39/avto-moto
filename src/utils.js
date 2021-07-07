@@ -5,14 +5,17 @@ export const priceFormat = (data) => {
 
 const ONE_STAR_PERCENT = 20;
 
+const MS_IN_MIN = 60000;
+
 export const getRatingPercentage = (rating) => `${Math.round(rating) * ONE_STAR_PERCENT}%`;
 
 export const getDateDiff = (date) => {
-    const now = Date.now();
-    const diff = (now - Date.parse(date));
-    if (diff < 86400000) {
-        return `${diff/1000} минут назад`;
+    const now = new Date();
+    const reviewDate = new Date(date);
+    const diff = (now - new Date(date));
+    if (diff < 3600000) {
+        return `${Math.floor(diff/MS_IN_MIN)} минут назад`;
     } else {
-        return date
+        return `${reviewDate.getDate()}.${reviewDate.getMonth()+1}.${reviewDate.getFullYear()}`
     }
 }

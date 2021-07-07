@@ -33,6 +33,7 @@ const CardImg = () => {
                     type="button"
                     onClick={onLeftButtonClick}
                     disabled ={imageIndex === 0}
+                    aria-label="Листать влево"
             >
                 <svg width="20" height="13" viewBox="0 0 20 13" fill="none">
                     <path d="M1.00427 6.17188L6.91841 0.368597M1.00427 6.17188L6.69294 11.9692M1.00427 6.17188L19.9813 6.35128"/>
@@ -45,6 +46,7 @@ const CardImg = () => {
                     type="button"
                     onClick={onRightButtonClick}
                     disabled ={imageIndex === (count-1)}
+                    aria-label="Листать вправо"
             >
                 <svg width="20" height="13" viewBox="0 0 20 13" fill="none">
                     <path d="M18.9873 6.17188L13.0747 0.368597M18.9873 6.17188L13.3001 11.9692M18.9873 6.17188L0.0150977 6.35128"/>

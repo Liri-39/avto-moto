@@ -2,12 +2,11 @@ import React from "react";
 import ReviewsItem from "../reviews-item/reviews-item";
 import {setIsFormOpen} from "../../store/action";
 import {useDispatch, useSelector} from "react-redux";
-import {getIsFormOpen, getReviews} from "../../store/selectors";
+import {getReviews} from "../../store/selectors";
 
 const Reviews = () => {
     const dispatch = useDispatch();
     const reviews =  useSelector(getReviews);
-    const isFormOpen = useSelector(getIsFormOpen);
 
     const onButtonClick = (evt) => {
         evt.preventDefault();

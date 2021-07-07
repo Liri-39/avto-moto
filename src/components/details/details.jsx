@@ -1,21 +1,17 @@
 import React from 'react';
+import {useSelector} from "react-redux";
+import {getOffer} from "../../store/selectors";
 
 const Details = () => {
-    return <dl className="details-list">
-        <dt>Трансмиссия</dt>
-        <dd>Роботизированная</dd>
-        <dt>Мощность двигателя, л.с.</dt>
-        <dd>249</dd>
-        <dt>Тип двигателя</dt>
-        <dd>Бензиновый</dd>
-        <dt>Привод</dt>
-        <dd>Полный</dd>
-        <dt>Объем двигателя, л</dt>
-        <dd>2.4</dd>
-        <dt>Макс. крутящий момент</dt>
-        <dd>370/4500</dd>
-        <dt>Количество цилиндров</dt>
-        <dd>4</dd>
+    const offer = useSelector(getOffer);
+
+    return <dl className="details-list" aria-label="Характеристики">
+        {offer.details.map((item) =>
+            <>
+                <dt key={item.title}>{item.title}</dt>
+                <dd key={item.description}>{item.description}</dd>
+            </>
+        )}
     </dl>
 };
 

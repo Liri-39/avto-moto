@@ -17,12 +17,16 @@
   font-size: 16px;
   line-height: 22px;
   margin-left: 68px;
+}
 
-  &:hover span{
-    color: $black;
+.nav__item-link {
+  color: $graphite;
+
+  &:hover{
+    color: $red;
   }
 
-  &:focus span{
-    color: $black;
+  &:focus{
+    color: $red;
   }
 }
