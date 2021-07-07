@@ -38,7 +38,7 @@
 
 .reviews__item {
   padding: 20px 0 20px 0;
-  border-bottom: 0.5px solid $black;
+  border-bottom: 0.5px solid rgba(0, 0, 0, 0.2);
 }
 
 .reviews__user {
@@ -85,6 +85,14 @@
 .reviews__comment {
   padding-top: 3px;
 }
+
+.reviews__comment-title{
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 20px;
+  color: $black;
+}
+
 .reviews__comment p {
   font-size: 15px;
   line-height: 20px;

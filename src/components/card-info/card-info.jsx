@@ -1,6 +1,6 @@
-import React from 'react';
+import React from "react";
 import {useSelector, useDispatch} from "react-redux";
-import {getActiveTab} from '../../store/selectors';
+import {getActiveTab, getIsFormOpen} from "../../store/selectors";
 import Details from "../details/details";
 import Contacts from "../contacts/contacts";
 import Reviews from "../reviews/reviews";
@@ -10,6 +10,7 @@ import {changeActiveTab} from "../../store/action";
 const CardInfo = () => {
     const dispatch = useDispatch();
     const tab =  useSelector(getActiveTab);
+    const isFormOpen = useSelector(getIsFormOpen);
 
     let content;
     switch (tab) {
@@ -23,6 +24,8 @@ const CardInfo = () => {
             content = <Details/>;
             break;
     }
+
+    if (isFormOpen) content = <Reviews/>;
 
     const onTabClick = (evt, id) => {
         evt.preventDefault();

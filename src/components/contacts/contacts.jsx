@@ -12,9 +12,13 @@ const Contacts = () => {
             <dt className="contacts__item-title">Режим работы</dt>
             <dd className="contacts__item-content">Ежедневно, с 10:00 до 21:00</dd>
             <dt className="contacts__item-title">Телефон</dt>
-            <dd className="contacts__item-content">8 (800) 333-55-99</dd>
+            <dd className="contacts__item-content">
+                <a href="tel:88003335599">8 (800) 333-55-99</a>
+            </dd>
             <dt className="contacts__item-title">E-mail</dt>
-            <dd className="contacts__item-content">info@avto-moto.ru</dd>
+            <dd className="contacts__item-content">
+                <a href="mailto:info@avto-moto.ru">info@avto-moto.ru</a>
+            </dd>
         </dl>
         {<MapY/>}
     </div>

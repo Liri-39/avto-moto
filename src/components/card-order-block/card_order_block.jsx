@@ -1,17 +1,21 @@
-import React from 'react';
+import React from "react";
+import {useSelector} from "react-redux";
+import {getOffer} from "../../store/selectors";
+import {priceFormat} from "../../utils"
 
 const CardOrderBlock = () => {
+    const offer = useSelector(getOffer);
+
     return <>
-    <h1 className="card__title">Марпех 11</h1>
+    <h1 className="card__title">{offer.title}</h1>
         <div className="card__feature">
-            <span className="card__feature-item card__feature-item--1">бензин</span>
-            <span className="card__feature-item card__feature-item--2">механика</span>
-            <span className="card__feature-item card__feature-item--3">100 л.с</span>
-            <span className="card__feature-item card__feature-item--4">1.4 л</span>
+            {offer.features.map((item) =>
+                <span className={`card__feature-item card__feature-item--${item.typeId}`}>{item.title}</span>
+            )}
         </div>
         <div className="card__price-block">
-            <span className="card__price-actual">2&nbsp;300&nbsp;000&nbsp;₽</span>
-            <span className="card__price-old">2&nbsp;&nbsp;400&nbsp;000&nbsp;₽</span>
+            <span className="card__price-actual">{priceFormat(offer.price)} ₽</span>
+            <span className="card__price-old">{priceFormat(offer.oldPrice)} ₽</span>
         </div>
         <button className="card__button card__button--request">оставить заявку</button>
         <button className="card__button card__button--credit">В КРЕДИТ ОТ 11 000 ₽</button>

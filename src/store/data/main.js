@@ -1,5 +1,5 @@
-import {createReducer} from '@reduxjs/toolkit';
-import {changeActiveTab, setIsFormOpen} from '../action';
+import {createReducer} from "@reduxjs/toolkit";
+import {changeActiveTab, setIsFormOpen} from "../action";
 import {offer} from "../../mocks/offer";
 import {TabType} from "../../const";
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import {getRatingPercentage} from "../../utils"
+import {getDateDiff, getRatingPercentage} from "../../utils"
 
 const ReviewsItem = ({review}) => {
     return <li className="reviews__item">
@@ -13,7 +13,7 @@ const ReviewsItem = ({review}) => {
             <p>{review.minus}</p>
         </div>
         <div className="reviews__comment">
-            <div className="reviews__coment-title">Комментарий</div>
+            <div className="reviews__comment-title">Комментарий</div>
             <p>{review.comment}</p>
         </div>
         <div className="reviews__rating rating">
@@ -21,11 +21,11 @@ const ReviewsItem = ({review}) => {
                 <span style={{width: getRatingPercentage(review.rating)}}/>
                 <span className="visually-hidden">Rating</span>
             </div>
-            <span className="reviews__resume">{review.isPositive === true ? `Советует` : `Не советует`}</span>
+            <span className="reviews__resume">{review.rating >= 3 ? `Советует` : `Не советует`}</span>
         </div>
         <div className="reviews__footer">
-            <time className="reviews__time" dateTime={new Date()}>
-                1 минуту назад
+            <time className="reviews__time" dateTime={review.date}>
+                {getDateDiff(review.date)}
             </time>
             <a href="#">Ответить</a>
         </div>

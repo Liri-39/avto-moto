@@ -1,6 +1,6 @@
-import React, {useState} from 'react';
+import React, {useState} from "react";
 import {useSelector} from "react-redux";
-import {getOffer} from '../../store/selectors';
+import {getOffer} from "../../store/selectors";
 import {MAX_IMG_COUNT} from "../../const";
 
 const CardImg = () => {

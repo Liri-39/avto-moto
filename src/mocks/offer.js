@@ -10,19 +10,19 @@ export const offer = {
     features: [
         {
             title: `бензин`,
-            img: `icon-t.svg`,
+            typeId: 1,
         },
         {
             title: `механика`,
-            img: `icon-b.svg`,
+            typeId: 2,
         },
         {
             title: `100 л.с`,
-            img: `icon-w.svg`,
+            typeId: 3,
         },
         {
             title: `1.4 л`,
-            img: `icon-v.svg`,
+            typeId: `4`,
         }
     ],
     details: [

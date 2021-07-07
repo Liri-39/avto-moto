@@ -6,3 +6,13 @@ export const priceFormat = (data) => {
 const ONE_STAR_PERCENT = 20;
 
 export const getRatingPercentage = (rating) => `${Math.round(rating) * ONE_STAR_PERCENT}%`;
+
+export const getDateDiff = (date) => {
+    const now = Date.now();
+    const diff = (now - Date.parse(date));
+    if (diff < 86400000) {
+        return `${diff/1000} минут назад`;
+    } else {
+        return date
+    }
+}

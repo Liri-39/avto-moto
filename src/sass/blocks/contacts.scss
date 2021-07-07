@@ -34,4 +34,12 @@
   & span:nth-child(1) {
     padding-top: 5px;
   }
+
+  & a {
+    color: $black;
+  }
+
+  &:hover a {
+    color: $red;
+  }
 }

@@ -1,5 +1,5 @@
-import {combineReducers} from '@reduxjs/toolkit';
-import main from './data/main';
+import {combineReducers} from "@reduxjs/toolkit";
+import main from "./data/main";
 import reviewsData from "./data/reviews";
 
 export const NameSpace = {
