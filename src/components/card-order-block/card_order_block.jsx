@@ -10,7 +10,7 @@ const CardOrderBlock = () => {
     <h1 className="card__title">{offer.title}</h1>
         <div className="card__feature">
             {offer.features.map((item) =>
-                <span className={`card__feature-item card__feature-item--${item.typeId}`}>{item.title}</span>
+                <span className={`card__feature-item card__feature-item--${item.typeId}`} key={`feature-${item.typeId}`}>{item.title}</span>
             )}
         </div>
         <div className="card__price-block">

@@ -8,6 +8,13 @@
   padding: 0 20px 0 0;
 }
 
+.details-list__pair-container {
+  width: 585px;
+  display: flex;
+  flex-direction: row;
+  margin: 0;
+}
+
 .details-list dt, .details-list dd {
   display: flex;
   width: 50%;
