@@ -93,10 +93,12 @@
   border: 1px solid $graphite20;
   background-color: $white;
   position: relative;
+  color: $black;
 
   &::placeholder {
     font-size: 14px;
     line-height: 19px;
+    color: $graphite;
   }
 
   &:required::before {
@@ -112,7 +114,7 @@
     transform: rotate(45deg);
   }
 
-  &:focus {
+  &:focus, &:hover {
     border-color: transparent;
     outline: 1px solid $bright-red;
     outline-offset: -1px;
@@ -127,13 +129,15 @@
   background-color: $white;
   border: 1px solid $graphite20;
   resize: none;
+  color: $black;
 
   &::placeholder {
     font-size: 14px;
     line-height: 19px;
+    color: $graphite;
   }
 
-  &:focus {
+  &:focus, &:hover {
     border-color: transparent;
     outline: 1px solid $bright-red;
     outline-offset: 0;

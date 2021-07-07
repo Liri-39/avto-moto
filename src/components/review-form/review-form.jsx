@@ -47,7 +47,12 @@ const ReviewForm = () => {
         <div className="modal"
              onClick={handleFormClose}
         />
-        <form className="review-form" action="#" method="post" onSubmit={sendForm}>
+        <form className="review-form"
+              action="#"
+              method="post"
+              onSubmit={sendForm}
+              onKeyDown={handleFormClose}
+        >
             <button className="review-form__close-button"
                     type="button"
                     aria-label="Закрыть форму"
