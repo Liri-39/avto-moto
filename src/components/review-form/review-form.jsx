@@ -3,15 +3,16 @@ import {useDispatch} from "react-redux";
 import {addReview, setIsFormOpen} from "../../store/action";
 import ReviewRatingItem from "../review-rating-item/review-rating-item";
 import {ratings} from "../../const";
+import {getRandomInteger} from "../../utils";
 
 const ReviewForm = () => {
 
     const [review, setReview] = useState({
-        user: ``,
-        plus: ``,
-        minus: ``,
-        comment: ``,
-        rating: 0,
+        user: localStorage.getItem('user'),
+        plus: localStorage.getItem('plus'),
+        minus: localStorage.getItem('minus'),
+        comment: localStorage.getItem('comment'),
+        rating: Number(localStorage.getItem('rating')),
     });
 
     const dispatch = useDispatch();
@@ -19,17 +20,27 @@ const ReviewForm = () => {
 
     const sendForm = (evt) => {
         evt.preventDefault();
-        const date = new Date();
-        dispatch(addReview({user, plus, minus, comment, rating, date}));
-        dispatch(setIsFormOpen(false));
+        if (user.length > 0 && comment.length > 0) {
+            const date = new Date();
+            const id = getRandomInteger();
+            dispatch(addReview({id, user, plus, minus, comment, rating, date}));
+            dispatch(setIsFormOpen(false));
+        }
     };
 
     const handleFormClose = (evt) => {
         evt.preventDefault();
-        dispatch(setIsFormOpen(false));
+            dispatch(setIsFormOpen(false));
+    }
+
+    const handleEscKeyPress = (evt) => {
+        if (evt.key === `Escape`) {
+            dispatch(setIsFormOpen(false));
+        }
     }
 
     const handleFormInputChange = (evt) => {
+        localStorage.setItem(evt.target.id, evt.target.value);
         setReview({
             ...review,
             [evt.target.id]: evt.target.value,
@@ -37,6 +48,7 @@ const ReviewForm = () => {
     };
 
     const handleCommentRatingChange = (evt) => {
+        localStorage.setItem('rating', evt.target.value);
         setReview({
             ...review,
             rating: parseFloat(evt.target.value),
@@ -51,7 +63,7 @@ const ReviewForm = () => {
               action="#"
               method="post"
               onSubmit={sendForm}
-              onKeyDown={handleFormClose}
+              onKeyDown={handleEscKeyPress}
         >
             <button className="review-form__close-button"
                     type="button"

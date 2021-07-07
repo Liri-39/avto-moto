@@ -24,6 +24,7 @@
   height: 15px;
   border: none;
   justify-self: end;
+  cursor: pointer;
 
   &::before {
     content: "";
@@ -181,6 +182,7 @@
   letter-spacing: 0.12em;
   text-transform: uppercase;
   margin-bottom: 9px;
+  cursor: pointer;
 
   &:hover {
     background-color: $dark-red;

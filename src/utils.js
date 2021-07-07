@@ -19,3 +19,10 @@ export const getDateDiff = (date) => {
         return `${reviewDate.getDate()}.${reviewDate.getMonth()+1}.${reviewDate.getFullYear()}`
     }
 }
+
+export const getRandomInteger = (a = 2, b = 100) => {
+    const lower = Math.ceil(Math.min(a, b));
+    const upper = Math.floor(Math.max(a, b));
+
+    return Math.floor(lower + Math.random() * (upper - lower + 1));
+};
