@@ -14,18 +14,23 @@ const CardInfo = () => {
 
     let content;
     switch (tab) {
-        case TabType.CONTACTS.id :
+        case TabType.CONTACTS.id : {
             content = <Contacts/>;
             break;
-        case TabType.REVIEWS.id :
+        }
+        case TabType.REVIEWS.id : {
             content = <Reviews/>;
             break;
-        default:
+        }
+        default: {
             content = <Details/>;
             break;
+        }
     }
 
-    if (isFormOpen) content = <Reviews/>;
+    if (isFormOpen) {
+        content = <Reviews/>;
+    }
 
     const onTabClick = (evt, id) => {
         evt.preventDefault();

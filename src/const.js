@@ -1,3 +1,5 @@
+export const MAX_IMG_COUNT = 3;
+
 export const TabType = {
     DETAILS: {
         id: 1,
@@ -20,8 +22,6 @@ export const ratings = [
     {rating: 2, title: `badly`},
     {rating: 1, title: `terribly`},
 ];
-
-export const MAX_IMG_COUNT = 3;
 
 export const centerMap = {
     center: [59.968137, 30.316272],

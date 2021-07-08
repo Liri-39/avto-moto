@@ -1,6 +1,6 @@
-import React from 'react';
-import {centerMap} from '../../const'
-import {YMaps, Map, Placemark} from 'react-yandex-maps';
+import React from "react";
+import {centerMap} from "../../const"
+import {YMaps, Map, Placemark} from "react-yandex-maps";
 
 const MapY = () => {
     return <div id="map" className="map" aria-label="Карта">

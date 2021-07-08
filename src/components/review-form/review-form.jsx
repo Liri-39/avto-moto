@@ -8,29 +8,33 @@ import {getRandomInteger} from "../../utils";
 const ReviewForm = () => {
 
     const [review, setReview] = useState({
-        user: localStorage.getItem('user'),
-        plus: localStorage.getItem('plus'),
-        minus: localStorage.getItem('minus'),
-        comment: localStorage.getItem('comment'),
-        rating: Number(localStorage.getItem('rating')),
+        user: localStorage.length ? localStorage.getItem('user') : ``,
+        plus: localStorage.length ? localStorage.getItem('plus') : ``,
+        minus: localStorage.length ? localStorage.getItem('minus') : ``,
+        comment: localStorage.length ? localStorage.getItem('comment') : ``,
+        rating: localStorage.length ? Number(localStorage.getItem('rating')) : 0,
     });
 
     const dispatch = useDispatch();
     const {user, plus, minus, comment, rating} = review;
 
+    let isError = false;
+    if (user.length === 0 || comment.length === 0) {
+       isError = true;
+    }
+
     const sendForm = (evt) => {
         evt.preventDefault();
-        if (user.length > 0 && comment.length > 0) {
-            const date = new Date();
-            const id = getRandomInteger();
-            dispatch(addReview({id, user, plus, minus, comment, rating, date}));
-            dispatch(setIsFormOpen(false));
-        }
+        const date = new Date().toISOString();
+        const id = getRandomInteger();
+        dispatch(addReview({id, user, plus, minus, comment, rating, date}));
+        dispatch(setIsFormOpen(false));
+        localStorage.clear();
     };
 
     const handleFormClose = (evt) => {
         evt.preventDefault();
-            dispatch(setIsFormOpen(false));
+        dispatch(setIsFormOpen(false));
     }
 
     const handleEscKeyPress = (evt) => {
@@ -72,17 +76,17 @@ const ReviewForm = () => {
             />
             <h2 className="review-form__title">Оставить отзыв</h2>
             <div className="review-form__wrapper">
-                <label className="form__input-name" htmlFor="name">Пожалуйста, заполните поле</label>
-                <input className="form__input form__input--text"
+                <label className="form__input-name" htmlFor="user">Пожалуйста, заполните поле</label>
+                <input className="form__input form__input--required"
                        type="text"
                        name="user"
                        id="user"
                        placeholder="Имя"
                        value={review.user}
                        autoFocus
-                       required
                        onChange={handleFormInputChange}
                 />
+                <label className="visually-hidden" htmlFor="plus">Расскажите о достоинствах</label>
                 <input className="form__input form__input--text"
                        type="text"
                        name="plus"
@@ -91,6 +95,7 @@ const ReviewForm = () => {
                        value={review.plus}
                        onChange={handleFormInputChange}
                 />
+                <label className="visually-hidden" htmlFor="minus">Расскажите о недостатках</label>
                 <input className="form__input form__input--text"
                        type="text"
                        name="minus"
@@ -110,6 +115,7 @@ const ReviewForm = () => {
                         />
                     )}
                 </div>
+                <label className="visually-hidden" htmlFor="comment">Оставьте комментарий</label>
                 <textarea
                     className="review-form__textarea"
                     id="comment"
@@ -118,13 +124,13 @@ const ReviewForm = () => {
                     placeholder="Комментарий"
                     value={review.comment}
                     onChange={handleFormInputChange}
-                    required
                 />
             </div>
             <button
                 className="review-form__submit-button"
                 type="submit"
                 onClick={sendForm}
+                disabled={isError}
             >оставить отзыв
             </button>
         </form>

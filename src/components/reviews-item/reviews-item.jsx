@@ -1,4 +1,5 @@
-import React from 'react';
+import React from "react";
+import PropTypes from "prop-types";
 import {getDateDiff, getRatingPercentage} from "../../utils"
 
 const ReviewsItem = ({review}) => {
@@ -30,6 +31,18 @@ const ReviewsItem = ({review}) => {
             <a href="#" className="reviews__footer-link">Ответить</a>
         </div>
     </li>
+};
+
+
+ReviewsItem.propTypes = {
+    review: PropTypes.shape({
+        rating: PropTypes.number,
+        user: PropTypes.string.isRequired,
+        date: PropTypes.string.isRequired,
+        plus: PropTypes.string,
+        minus: PropTypes.string,
+        comment: PropTypes.string.isRequired,
+    }).isRequired,
 };
 
 export default ReviewsItem;

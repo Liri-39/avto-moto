@@ -102,7 +102,7 @@
     color: $graphite;
   }
 
-  &:required::before {
+  &--required::placeholder::before {
     content: "*";
     color: $bright-red;
     font-size: 17px;
@@ -167,6 +167,7 @@
 
 .review-form__submit-button {
   align-self: center;
+  position: relative;
   display: flex;
   align-content: center;
   justify-content: center;
@@ -186,6 +187,25 @@
 
   &:hover {
     background-color: $dark-red;
+  }
+
+  &:disabled:hover {
+    background-color: $red;
+  }
+
+  &:disabled {
+    opacity: .5;
+    color: $red;
+  }
+
+  &:disabled::before {
+    content: "Заполните обязательные поля формы";
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: xx-small;
+    color: $white;
   }
 }
 
