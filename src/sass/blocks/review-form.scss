@@ -20,6 +20,7 @@
 .review-form__close-button {
   position: relative;
   background-color: transparent;
+  padding: 5px;
   width: 15px;
   height: 15px;
   border: none;
@@ -80,6 +81,7 @@
 
 .form__input-name {
   width: 300px;
+  height: 19px;
   font-size: 14px;
   line-height: 19px;
   color: $bright-red;
@@ -131,6 +133,18 @@
   border: 1px solid $graphite20;
   resize: none;
   color: $black;
+  position: relative;
+
+  &::placeholder::before {
+    content: "*";
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    color: $bright-red;
+    font-size: 19px;
+    line-height: 22px;
+  }
 
   &::placeholder {
     font-size: 14px;
@@ -195,17 +209,6 @@
 
   &:disabled {
     opacity: .5;
-    color: $red;
-  }
-
-  &:disabled::before {
-    content: "Заполните обязательные поля формы";
-    display: flex;
-    position: absolute;
-    top: 0;
-    left: 0;
-    font-size: xx-small;
-    color: $white;
   }
 }
 
@@ -222,4 +225,9 @@
 
 .review-form__rating-label {
   margin-top: 5px;
+}
+
+.review-form__rating-input:focus:checked~.review-form__rating-label .review-form__star-image {
+  filter: drop-shadow(1px 2px 1px white);
+  stroke: $white;
 }

@@ -8,11 +8,11 @@ import {getRandomInteger} from "../../utils";
 const ReviewForm = () => {
 
     const [review, setReview] = useState({
-        user: localStorage.length ? localStorage.getItem('user') : ``,
-        plus: localStorage.length ? localStorage.getItem('plus') : ``,
-        minus: localStorage.length ? localStorage.getItem('minus') : ``,
-        comment: localStorage.length ? localStorage.getItem('comment') : ``,
-        rating: localStorage.length ? Number(localStorage.getItem('rating')) : 0,
+        user: localStorage.user ? localStorage.getItem('user') : ``,
+        plus: localStorage.plus ? localStorage.getItem('plus') : ``,
+        minus: localStorage.minus ? localStorage.getItem('minus') : ``,
+        comment: localStorage.comment ? localStorage.getItem('comment') : ``,
+        rating: localStorage.rating ? Number(localStorage.getItem('rating')) : 0,
     });
 
     const dispatch = useDispatch();
@@ -76,7 +76,8 @@ const ReviewForm = () => {
             />
             <h2 className="review-form__title">Оставить отзыв</h2>
             <div className="review-form__wrapper">
-                <label className="form__input-name" htmlFor="user">Пожалуйста, заполните поле</label>
+                <span className="form__input-name">{isError && `Пожалуйста, заполните поле`}</span>
+                <label className="visually-hidden" htmlFor="user">Введите имя</label>
                 <input className="form__input form__input--required"
                        type="text"
                        name="user"

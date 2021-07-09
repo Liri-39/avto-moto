@@ -10,7 +10,7 @@ const Header = () => {
                     <span>Moto</span>
                 </div>
             </a>
-            <nav className="nav" aria-label="Главное меню">
+            <nav className="header__nav  nav" aria-label="Главное меню">
                 <ul className="nav__list">
                     <li className="nav__item">
                         <a href="#" className="nav__item-link">Автомобили</a>

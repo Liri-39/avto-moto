@@ -9,6 +9,13 @@ import {getIsFormOpen} from "../../store/selectors";
 const Page = () => {
     const isFormOpen = useSelector(getIsFormOpen);
 
+    if (isFormOpen) {
+        document.body.style.overflow = 'hidden';
+        document.querySelector('html').scrollTop = window.scrollY;
+    } else  {
+        document.body.style.overflow = null;
+    }
+
     return <>
         {<Header/>}
         {<Card/>}

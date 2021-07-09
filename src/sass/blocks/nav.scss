@@ -5,7 +5,7 @@
 .nav__list {
   display: flex;
   align-content: center;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   flex-direction: row;
   align-items: center;
   justify-content: flex-end;
@@ -17,6 +17,7 @@
   font-size: 16px;
   line-height: 22px;
   margin-left: 68px;
+  margin-top: 5px;
 }
 
 .nav__item-link {
