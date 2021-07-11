@@ -7,6 +7,7 @@ import ReviewForm from "../review-form/review-form";
 import {getIsFormOpen} from "../../store/selectors";
 
 const Page = () => {
+
     const isFormOpen = useSelector(getIsFormOpen);
 
     if (isFormOpen) {
@@ -17,10 +18,10 @@ const Page = () => {
     }
 
     return <>
+        {isFormOpen && <ReviewForm/>}
         {<Header/>}
         {<Card/>}
         {<Footer/>}
-        {isFormOpen && <ReviewForm/>}
     </>
 };
 

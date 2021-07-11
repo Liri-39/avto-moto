@@ -159,26 +159,6 @@
   }
 }
 
-.review-form__rating-title {
-  font-weight: 600;
-  font-size: 15px;
-  line-height: 20px;
-  color: $black;
-  margin-right: 6px;
-  margin-bottom: 5px;
-  order: 1;
-}
-
-.review-form__rating {
-  width: 300px;
-  margin: 28px 0 15px;
-  display: flex;
-  flex-direction: row-reverse;
-  align-content: flex-end;
-  align-items: flex-end;
-  justify-content: space-between;
-}
-
 .review-form__submit-button {
   align-self: center;
   position: relative;
@@ -212,6 +192,53 @@
   }
 }
 
+.review-form__required-item-wrapper {
+  position: relative;
+
+  &::before {
+    content: "*";
+    display: block;
+    position: absolute;
+    color: #d12136;
+    z-index: 1;
+  }
+
+  &--input::before {
+    top: 15px;
+    left: 11px;
+  }
+
+  &--textarea::before {
+    top: 25px;
+    left: 11px;
+  }
+}
+
+.review-form__rating {
+  width: 300px;
+  margin: 34px 0 15px;
+  display: flex;
+  flex-direction: row-reverse;
+  align-content: flex-end;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.review-form__rating-title {
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 20px;
+  color: $black;
+  margin-right: 6px;
+  margin-bottom: 5px;
+  order: 1;
+}
+
+.review-form__rating-input:focus .review-form__rating-label .review-form__star-image,
+.review-form__rating-label:hover .review-form__star-image{
+  stroke: $graphite;
+}
+
 .review-form__star-image {
   fill: $grey1;
 }
@@ -221,13 +248,4 @@
 .review-form__rating-label:hover .review-form__star-image,
 .review-form__rating-label:hover~.review-form__rating-label .review-form__star-image {
   fill: $red;
-}
-
-.review-form__rating-label {
-  margin-top: 5px;
-}
-
-.review-form__rating-input:focus:checked~.review-form__rating-label .review-form__star-image {
-  filter: drop-shadow(1px 2px 1px white);
-  stroke: $white;
 }
