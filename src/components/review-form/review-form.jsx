@@ -46,9 +46,7 @@ const ReviewForm = () => {
 
     const handleFocusOutEvent = (evt) => {
         if (!evt.currentTarget.contains(evt.relatedTarget)) {
-            console.log(evt.target.type);
             userNameInput.current.focus();
-            console.log(userNameInput.current);
         }
     }
 
